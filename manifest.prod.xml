@@ -57,32 +57,50 @@
                     <SourceLocation resid="Taskpane.Url" />
                   </Action>
                 </Control>
-                </Group>
-              </OfficeTab>
-            </ExtensionPoint>
-          </DesktopFormFactor>
-        </Host>
-      </Hosts>
-      <Resources>
-        <bt:Images>
-          <bt:Image id="Icon.16x16" DefaultValue="https://xrq1051.github.io/excelAddin/assets/icon-16.png" />
-          <bt:Image id="Icon.32x32" DefaultValue="https://xrq1051.github.io/excelAddin/assets/icon-32.png" />
-          <bt:Image id="Icon.80x80" DefaultValue="https://xrq1051.github.io/excelAddin/assets/icon-80.png" />
-        </bt:Images>
-        <bt:Urls>
-          <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812" />
-          <bt:Url id="Commands.Url" DefaultValue="https://xrq1051.github.io/excelAddin/commands.html" />
-          <bt:Url id="Taskpane.Url" DefaultValue="https://xrq1051.github.io/excelAddin/taskpane.html" />
-        </bt:Urls>
-        <bt:ShortStrings>
-          <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!" />
-          <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group" />
-          <bt:String id="TaskpaneButton.Label" DefaultValue="Show Taskpane" />
-        </bt:ShortStrings>
-        <bt:LongStrings>
-          <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started." />
-          <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane" />
-        </bt:LongStrings>
-      </Resources>
-    </VersionOverrides>
-  </OfficeApp>
+                <Control xsi:type="Button" id="ToggleProtection">
+                  <Label resid="ProtectionButtonLabel" />
+                  <Supertip>
+                    <Title resid="ProtectionButtonLabel" />
+                    <Description resid="ProtectionButtonToolTip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>toggleProtection</FunctionName>
+                  </Action>
+                </Control>
+
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="https://xrq1051.github.io/excelAddin/assets/icon-16.png" />
+        <bt:Image id="Icon.32x32" DefaultValue="https://xrq1051.github.io/excelAddin/assets/icon-32.png" />
+        <bt:Image id="Icon.80x80" DefaultValue="https://xrq1051.github.io/excelAddin/assets/icon-80.png" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812" />
+        <bt:Url id="Commands.Url" DefaultValue="https://xrq1051.github.io/excelAddin/commands.html" />
+        <bt:Url id="Taskpane.Url" DefaultValue="https://xrq1051.github.io/excelAddin/taskpane.html" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!" />
+        <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group" />
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Show Taskpane" />
+        <bt:String id="ProtectionButtonLabel" DefaultValue="Toggle Worksheet Protection" />
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started." />
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane" />
+        <bt:String id="ProtectionButtonToolTip" DefaultValue="Click to protect or unprotect the current worksheet." />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
